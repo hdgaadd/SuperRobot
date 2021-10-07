@@ -1,0 +1,862 @@
+操作数operand       [ˈɒpərænd]
+转换converted     [kənˈvɜːtɪd]
+不相容的incompatible    [ˌɪnkəmˈpætəbl] 
+非法的illegal    [ɪˈliːɡl]
+声明statement     [ˈsteɪtmənt]
+二进制的binary     [ˈbaɪnəri]
+
+
+
+
+element-ui是基于vue的库(前端库)
+
+bootstrap是一款前端开发框架(前端库)，你只需<div class="样式名">就可以实现需要的效果，而不用使用css去自己写一个样式
+jQuery是一个轻量级的"写的少,做的多"的JavaScript库，实际上就是对现有的JavaScript的一种扩展
+AdminLTE是建立在bootstrap和JQuery之上的模板主题框架(帮你创建好了前端的页面模板)
+Servlet是sun公司提供的一门用于开发动态web资源的技术，java代码和前端页面相互联系
+
+Java中单例模式定义：一个类有且仅有一个实例
+单例模式两种构建方式：懒汉式、饿汉式
+
+事务四个特性：原子性、一致性、隔离性、持久性
+
+Java中的23种设计模式：factory（工厂模式)、Singleton（单例模式）、observer（观察者模式）
+
+Java序列化就是指把Java对象转换为字节序列的过程
+Java反序列化就是指把字节序列恢复为Java对象的过程。
+
+400 - 错误请求
+404 - 请求的资源不存在 
+500 - 服务器内部错误
+505 - 服务器不支持请求中所用的 HTTP 协议版本
+
+TCP面向连接协议(有连接协议)(三次握手)，UDP用户数据报协议(无连接的协议)
+TCP保证数据正确性，UDP可能丢包，TCP保证数据顺序，UDP不保证
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+算法方法论：
+交换位置
+双指针  数组:int i=0;int k=arr.length-1;i、k是该数组的双指针    双指针可以左0右n-1,也可左0右0
+辅助栈 辅助队列 辅助链表
+一次次加和一次性加
+数组先排好序
+善用for(int i:arr){}
+根据要求找出满足条件
+多少种可能性的题目一般都有递推性质，即f(n)和f(n−1)…f(1)之间是有联系的
+摩尔投票法： 核心理念为 票数正负抵消
+二进制算法题,按每个位之间的关系来设计算法
+辅助辅助辅助，而for、while
+前缀和     前缀和map只保存数第一次出现的位置，为了计算最长长度     map.put(0,0 or -1),使结果加上前缀和本身
+递归dfs(TreeNode left,TreeNode right)，丢两个去比较，而不是只丢一个，然后使用root.left和root.right去比较
+
+
+
+
+
+
+
+
+
+
+算法总结
+public void help(char[] ch,int num,ArrayList<String> list) 给递归方法传这些对象，是为了每一次递归都使用这些对象
+
+ArrayList<Integer> list1;ArrayList<Integer> list2;
+list1和list2不能使用list1==list2,应该使用list1.equals(list2)
+
+ArrayList<TreeNode> list1;ArrayList<TreeNode> list2;
+这两个list保存的node即使val一样,lef,right一样，但还是!list.equals(list2),因为两者的node都不是同一个对象，而使用的是ArrayList的equals()
+
+for(int i = queue.size(); i > 0; i--) {//完美避开队列的size改变
+    queue.poll();
+for(int i = 0; i < queue.size(); i++) {//每一次poll()，size会-1
+    queue.poll();
+
+二分查找     while(start<=end)    int mid=start+(end-start)/2;
+
+res.add(new ArrayList<Integer>(list));   而不是res.add(list)
+
+Set<String> output=new HashSet<String>();
+return new ArrayList<String>(output); 所有Collection子类型都有一个接收另一个Collection对象的接口，把该对象的元素填充进去
+
+int n=sc.nextInt();
+sc.nextLine();//读取nextInt()后产生的换行符
+String line=sc.nextLine()
+
+条件12和21的话，对数字的位置有要求
+for(int a = 1; a < 10; a++) {
+	for(int b = 1; b < 10; b++) {
+两数相加对数字的位置没要求，不能同一个相加
+for(int i = 1; i < 9; i++) {
+	for(int j = i+1; j < 10; j++) {
+
+if(staple[i]+drinks[i]<=x)
+i和j经常写错
+
+public void dfs(TreeNode root){     把每一个dfs递归看成一个整体
+        if(root==null) return;
+        dfs(root.right);     处理右子树
+        k--;                      处理root节点
+        if(k==0) result=root.val; 处理root节点
+        dfs(root.left);      处理左子树
+}
+
+error:  while(i<s.length()&&ch=charAt(i++)>='0'&&ch<='9')           ch=charAt(i++)需要加()
+true:   while(i<s.length()&&(ch=charAt(i++))>='0'&&ch<='9')
+
+不要急于对两个指针同时操作
+while(headA!=headB){
+        headA=headA.next;
+        headB=headB.next;
+        if(headA==null) headA=hB;
+        if(headB==null) headB=hA;
+}
+一个个分开单独操作可以避免许多出奇的测试用例错误
+while(headA!=headB){
+        if(headA!=null) headA=headA.next;
+        else headA=hB;
+        if(headB!=null) headB=headB.next;
+        else headB=hA;
+}
+
+有没有{}，执行效果是不一样的，第二段代码是if语句后break,第一段都是在if中
+if(ans%k==0){
+    flag=true;
+    break;
+}
+if(ans%k==0) flag=true;break;
+
+public void dfs(TreeNode root,int sum,int targetSum){//递归让某个值保持不变或保存上一次的值，继续传递下去的方法
+
+while时判断if与else
+
+递归树叫深度优先搜索dfs;递归其他叫动态规划，fbi
+动态规划两种，一种递归fbi斐波那契，一种dp数组数组的下一个在前一个的基础上加
+
+
+while(root!=null){
+          if(root.val>p.val&&root.val>q.val) root=root.left;
+          else if(root.val<p.val&&root.val<q.val) root=root.right;
+          else break;
+}                     //if、if、else和if、else if、break区别很大，后者是整体的
+while(root!=null){
+          if(root.val>p.val&&root.val>q.val) root=root.left;
+		  
+          if(root.val<p.val&&root.val<q.val) root=root.right;
+          else break;
+}
+
+//二分查找可以查找山脉数组的山顶,while退出是left>right时
+      int left=1,right=arr.length-2;
+      int ans=-1;
+      while(left<=right){
+        int mid=left+(right-left)/2;
+        if(arr[mid]>arr[mid+1]){
+          ans=mid;
+          right=mid-1;//
+        }else{
+          left=mid+1;//
+        }
+      }
+      return ans;
+
+
+count+=(n>>>=i)&1不行
+则使用如下
+if((n&1)==1){
+   count++;
+};
+n=n>>>=1;   //
+
+
+if(ch[i]=='.'){
+  ch[i]='[.]';  //char类型只包含一个字符,[.]是三个字符
+}
+
+表达式的开头非法illegal start of expression，可能是()写成了())
+
+dfs(int i,ArrayList<Integer> list)
+递归传递的list，使用list.clear()是对自身的clear(),可以让递归继续传递list
+list=new ArrayList<>()不会继续传递list,而是递归另一个地址的list
+
+递归传递一个数组或集合，目的是让该递归持续修改同一个数组或集合;而把数组或集合放在全局上等同于前面提到的递归作用，即使用全局就可以不用使用递归
+
+while(sc.hasNext())相当于while(true)
+输入一个数代表可以sc多少个数或行才可停止输入
+
+
+
+
+
+
+
+
+
+
+数组、链表、栈、队列、堆、HashMap、HashSet散列表、二叉树、深度优先搜索DFS(和回溯法一般绑定在一起)、广度优先算法BFS、动态规划、递归、回溯
+
+ans是一个答案存储器
+dist 长度
+数组 res （resource资源)
+辅助指针 前一个pre 当前cur next
+动态规划dp数组
+
+Math.min()
+Math.sqrt() 平方根
+Math.abs() 取绝对值
+Math.floor() 返回数字的下舍整数   -6.1》-7.0    101.6》101.0
+Math.pow(a,b) 幂
+Math.exp()
+Math.log()
+str.charAt(1)
+str.indexOf('a')
+Arrays.sort()给数组排序  给list排序Collections.sort()从小到大
+Arrays.fill(int[] res,int i)把res的所有值都赋值为i
+把str转换为int,int tem2=Integer.parseInt(s);
+将数组转换成字符串    System.out.println(arr)输出的是数组的地址;
+                      System.out.println(Arrays.toString(arr))将数组内容输出,不是转换成字符串;
+					  char[] ch=new char[n];System.out.println(new String(ch))将char数组转换成字符串,也可以System.out.println(String.valueOf(ch));
+String str=new String(arr,0,arr.length);
+将字符串转换成数组
+str.toCharArray()
+str.valueOf(index)     str.CharAt('')
+把list转换为数组
+ArrayList<String> list=new ArrayList<String>();
+String[] strings = new String[list.size()];
+list.toArray(strings);
+将char数组转换成字符串 String.valueOf(char[] data)  
+
+
+
+
+二叉排序树又称二叉搜索树，根结点的值大于左子树所有的值，根结点的值小于右子树所有的值
+平衡二叉树AVL Tree：任意节点的左右子树的高度差不大于1
+广度优先算法BFS  二叉树从上到下按层次遍历
+
+
+二叉树的:
+class BinaryTreeNode {
+	int val;
+	BinaryTreeNode left;
+	BinaryTreeNode right;
+
+	public BinaryTreeNode(int val) {//构造方法，给这个类对象赋值
+		this.val=val;
+	}
+                public int getVal() {
+		return val;
+	}
+	public void setVal(int val) {
+		this.val = val;
+	}等setter、getter方法
+}
+
+BinaryTreeNode test=root.right;则代表root.right全部都赋给了test整个对象赋值),而如果root.right.setVal()则test的val也会变,test.setVal(),root.right的val也一样变,
+因为他们都是指向同一个地址
+而如果root.right=root.left,则root.right与test从此无关
+(本质就是对象引用test和root.right都指向堆里同一个地址，而root.right=root.left后root.right的地址指向已经改变)
+
+二叉树的层数=高度
+二叉树的深度==左右子树最长的边数+1==层数
+WPL带权路径长度=边*权      WPL最小为赫夫曼树
+
+
+
+链表：
+class ListNode{
+    int val;
+    ListNode next=null;
+    //加数据
+    ListNode(int val){//构造方法，给这个类对象赋值
+	this.val=val;
+	}
+}
+ListNode :给链表加数据 ListNode node=new ListNode(1)；node.next=new ListNode(2);
+class ListNode {
+    int value;
+    ListNode next;
+}
+        ListNode node1 = new ListNode();
+        ListNode node2 = new ListNode();
+        ListNode node3 = new ListNode();
+        node1.value = 1;
+        node2.value = 2;
+        node3.value = 3;
+        node1.next = node2;
+        node2.next = node3;
+        node3.next = null;
+
+把head赋值给node的下一个： node.next=head      node的下一个赋值给head:  head=node.next
+
+ListNode cur=new ListNode(0);ListNode pre=cur;则给cur后面next多少个，也代表pre后面也next多少个
+因为pre=cur代表cur的所有都赋给了pre(整个对象赋值),而如果后来cur=cur.next,但pre还是那个pre,此时pre和cur没有一点关系
+
+
+
+
+
+
+
+
+
+散列表 使用散列表HashSet来存储字符，Set<Character> occ=new HashSet<Character>();   添加:occ.add()   删除:occ.remove()  是否包含:occ.contains( )，该方法返回boolean值
+
+使用哈希表HashMap来存储对应的键值对
+Map<Character, Character> map = new HashMap<Character, Character>() {{
+            put(')', '(');
+            put(']', '[');
+            put('}', '{');
+        }};
+方法  map.containsKey()  map.containsValue()  返回ture false      map.get()  map.put()
+
+使用HashMap来存储数组中每个数字出现的次数
+Map <Integer, Integer> map = new HashMap();
+for (int n: nums) {
+     map.put(n, map.getOrDefault(n, 0) + 1);
+}
+for(int key:map.keySet()){             //根据value获取相应的key
+    if(map.get(i)==1) arr[index++]=key;
+}
+
+	
+mp.entrySet()    返回此映射所包含的映射关系的 Set 视图
+获取在map中元素个数为1的元素
+for(Map.Entry<Integer,Integer> ep:map.entrySet()){       map.keySet()
+            int as=ep.getKey();
+            int occ=ep.getValue();
+            if(occ==1){
+                ans=as;
+                break;
+            }
+        }
+
+
+
+
+
+
+
+
+
+栈
+栈的两种实现方式：Stack时间消耗更少 Deque<Integer> myStack = new LinkedList<Integer>(); LinkedList<Integer> objects = new LinkedList<Integer>(); Stack<Integer> myStack=new Stack<Integer>()  
+入栈myStack.push(node)   出栈myStack.pop()    stack.size()    stack.isEmpty()，不能写为stack==null
+stack.peek 与 stack.pop 的区别 相同点：大家都返回栈顶的值 不同点：peek 不改变栈的值(不删除栈顶的值)，pop会把栈顶的值删除。
+堆 Queue<Integer> qe=new PriorityQueue<Integer>()；左父右子
+最大堆 自动排序 PriorityQueue<Integer> pq = new PriorityQueue<Integer>()   插入 pq.offer()   移除 pq.poll()
+
+
+
+
+
+
+队列
+Queue<TreeNode> queue=new LinkedList<TreeNode>();
+出队列 queue.poll()     queue.isEmpty()    queue.size()    queue.add()
+
+
+
+
+
+
+
+
+Colleacions集合
+Colleacions.swap(List<?> list, int i, int j)在指定列表的指定位置处交换元素
+Colleacions.disjoint()如果两个指定 collection 中没有相同的元素，则返回 true
+
+Colleacions.retainAll(Colleacions<?extends>)    让第一个Collections只保留他们的交集元素
+
+Collections.sort(List<T>,new Comparator<T>())给List<String>排序,重写Comparator的compare方法
+Collections.sort(rec, new Comparator<String>() {
+            public int compare(String word1, String word2) {
+                return cnt.get(word1) == cnt.get(word2) ? word1.compareTo(word2) : cnt.get(word2) - cnt.get(word1);
+            }
+        });
+compareTo方法：Integer x = 5;System.out.println(x.compareTo(3));如果指定的数与参数相等返回0；如果指定的数x小于参数返回 -1；如果指定的数大于参数返回 1
+compareTo比较字符串的话，是根据字符串的字典序
+
+
+
+
+
+
+
+String数组： String[] str=line.split(" ");
+int []A= {0,1,2,2,3,3,6} 和 public static int out(int[] arr)
+
+二维数组：int arr[][] ={{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
+行长度arr.length   列长度arr[0].length
+
+
+
+
+
+
+
+ArrayList: 可以看作是能够自动增长容量的数组
+LinkList是一个双链表,在添加和删除元素时具有比ArrayList更好的性能.但在get与set方面弱于ArrayList.
+创建一个可以存储数组的数组 List<List<Integer>> res=new ArrayList<>();   res.add()   res.get(index)  res.size() 不可以.length()
+添加:res.add(new ArrayList<Integer>(Arrays.asList(1,2,3)));
+创建一个可以存储Boolean的数组 List<Boolean> list=new ArrayList<>();
+list.add(true);
+ArrayList :动态数组,可以动态地增加或减少元素
+Arrays.asList()  把数组转换为List
+list.add(Index i，Element e)，添加元素时，若索引位置没有值，则直接添加，若索引位置有值，则添加到索引位置，后边的元素依次往后移动。
+return list.subList(0,k)   返回list第0到k-1个数
+
+List是固定大小的数组
+Arrays.asList()生成的List,是固定大小的数组，修改它的大小会抛出UnsupportOperationException
+List<String> list = Arrays.asList("A B C D E F G H I J K L".split(" "));
+List<String>  subList = list.subList(0,2);
+try { list.retainAll(subList); } catch(Exception e) {
+     System.out.println("retainAll(): " + e);
+}
+
+Colleacions.retainAll(Colleacions<?>) //让Collections只保存Colleacions<?>中的元素
+
+
+
+
+
+
+
+
+
+LinkedList:双链表，可以向头部或者尾部插入数据
+LinkedList<Integer> link = new LinkedList<>();
+link.addFirst()     link.addLast()
+
+
+
+
+
+
+
+
+
+字符串拼接
+String first="hello";
+String second="world";
+String word=first+","+second
+String拼接字符串会创建一个新的对象
+
+StringBuilder sb=new StringBuilder("hello");
+String second="world";
+String word=sb.append(",").append(second)
+
+StringBuffer数组
+StringBuffer[] sb=new StringBuffer[6];
+sb[0]=new StringBuffer();
+sb[0].append("hello")
+
+StringBuilder方法    sb.toString()   sb.append()
+
+使用方法对String a进行改变，a不变，因为字符串是不可变的，String是final型；而如果不使用方法，直接a="123",则a可以改变
+
+str.substring(0,3)  保留的是从0到2位置的字符串  "hamburger".substring(4, 7) returns "urg"   "smiles".substring(1, 5) returns "mile"
+
+trim()去除字符串前后的" "    str.split(" ")按" "分割字符串
+
+字符串引用在栈，实际数据在堆，常量池在堆里面
+String s1="abc";
+String s2="abc";
+System.out.println(s1==s2);//true   因为在编译String s2="abc"的时候常量池中已经有了"abc"的地址值,所以让s2直接指向常量池中的"abc"，这样s1和s2的地址值都是常量池中"abc"的地址值
+System.out.println(s1+s2=="abcabc");//false    在字符串的+操作中，只要有一个为字符串引用，因为引用值编译期无法确定值，故是在运行期动态运算后赋予新的地址，故false
+System.out.println(s1+"abc"=="abcabc");//false   //s1+"abc"对象和"abcabc"对象不是同一个内存地址空间
+System.out.println(s1=="ab"+"c");//true        两个无引用的字符串的拼接在常量池操作，因为常量池相同内容的都是同一个对象，给内容相同则地址一定相同
+System.out.println("abc"+"abc"=="abcabc");//true
+
+栈：存放基本类型的数据和对象的引用
+堆：存放new出来的对象，注意创建出来的对象只包含各自的成员变量，不包括成员方法
+常量池：存放常量，如基本类型的包装类(Integer、Short)和String,注意常量池位于堆中
+
+编译期创建好的String s1="abc",会存放在常量池，s1此时是常量池的一个对象;
+运行期new出来的String str=new String("abc")存放在堆，jvm会先查看常量池有没有"abc"这个对象，如果没有就在常量池创建该对象，并在堆中创建该常量池对象的拷贝对象
+
+//aa和bb是两个不同的对象，{1,2}是保存在堆的，此时堆里有两块{1,2}
+int[] aa={1,2};
+int[] bb={1,2};
+System.out.println(aa.equals(bb));//false Object的eqlals(),比较的是数组对象是否同一地址
+
+char[] ch1={'a','b'};
+char[] ch2={'a','b'};
+System.out.println(ch1.equals(ch2));//false Object的eqlals(),比较的是数组对象是否同一地址
+System.out.println(Arrays.equals(ch1,ch2));//true Arrays的eqlals(),比较数组的每个值是否相同
+System.out.println(new String(ch1).equals(new String(ch2)));true  String的eqlals(),比较char数组的每个值是否相同
+System.out.println(new String(ch1)==new String(ch2));false
+
+ArrayList<Integer> list1 = new ArrayList<Integer>(Arrays.asList(1,2,3));
+ArrayList<Integer> list2 = new ArrayList<Integer>(Arrays.asList(1,2,3));
+System.out.println(list1.equals(list2));//true 
+ArrayList的equals(),拿出ArrayList的每个元素，把每个元素分别进行equals(),如果是Integer则使用Integer的equals()他们值相当就true,如果是node对象，则使用Object的equals()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+extends的步骤
+// 1. 初始化父类中的静态成员变量和静态代码块 ；  
+// 2. 初始化子类中的静态成员变量和静态代码块 ；  
+// 3. 初始化父类的普通成员变量和代码块，再执行父类的构造方法；     //父类的方法不会被初始化
+// 4. 初始化子类的普通成员变量和代码块，再执行子类的构造方法；  
+静态代码块只会执行一次，而非静态代码块会在多次创建对象时多次执行
+B extends A         A ab=new B()可以使用父类所有的方法和子类覆盖的方法，不能使用子类特有的方法，和B ab=new B() 的执行效果不一样
+
+super.调用父类的方法  
+class Base
+{
+    public void methodOne()
+    {
+        System.out.print("A");
+        methodTwo();   //此时methodTwo()调用的不是父类的methodTwo(),而是子类的methodTwo()
+    }
+	public void methodTwo()
+    {
+        System.out.print("B");
+    }
+}
+class  Derived extends Base{
+    public void methodOne()
+    {
+        super.methodOne();
+        System.out.print("C");
+    }
+    public void methodTwo()
+    {
+        System.out.print("D");
+    }
+}
+Derived d=new Derived();d.methodOne();
+父类中两个被子类重写的方法，如果在父类方法里调用父类的方法，默认都是调用子类的方法
+
+继承的时候你要记得子类一定会调用父类的构造方法，如果没有显示的调用则系统默认调用父类参数为空的构造方法，而且若要用super调用父类的构造方法必须写在方法的第一行  
+
+子类是个普通类，父类方法为抽象方法，必须重写所有父类的抽象方法；而如果父类为普通方法,可以重写也可以不重写
+如果子类是个普通类，那么必须实现这个接口/抽象类的所有抽象方法；如果子类是个抽象类，那么不必实现这个接口/抽象类的抽象方法，因为抽象类中可以定义抽象方法
+
+继承重写，接口实现
+
+class Derived extends Base {
+    public void methodOne() {
+        super.methodOne();        //在子类的方法上可以super,其他地方不可
+        System.out.print("C");
+    }
+    public void methodTwo() {
+        
+        System.out.print("D");
+    }
+}
+
+子类的实例可以使用父类的方法
+class A{
+    public void a(){
+        System.out.println("666");
+    }
+    public A(){
+        System.out.println("a");
+    }
+}
+class B extends A{
+    public void b(){
+        a();                      //子类的方法上可以调用父类的方法,其他地方不可
+    }
+    public B(){
+        System.out.println("b");
+    }
+}
+
+B extends A, 没有左父右子的情况下,A a=new A();a.aaa();调用的是父类的方法，与子类无关，不会调用子类的aaa方法
+class A{
+    static{ System.out.print("A"); }
+    public void aaa(){
+        System.out.println("aaa");
+    }
+    public A(){
+        System.out.print("a");
+    }
+}
+class B extends A{
+    static{ System.out.print("B"); }
+    public void aaa(){
+        System.out.println("bbb");
+    }
+    public B(){
+        System.out.print("b");
+    }
+}
+
+
+
+
+
+A ab=new B();ab.b();        左父右子，无法使用子类B特有的b(),只有B b=new B(),b.b()才可
+class A{
+    public void a(){
+        System.out.println("666");
+    }
+    public A(){
+        System.out.println("a");
+    }
+}
+class B extends A{
+    public void b(){
+        a();                    
+    }
+    public B(){
+        System.out.println("b");
+    }
+}
+向上转型的好处藏在extens里，而不是在实例化的语句里，B ab= new B()和A ab=new B()只有A ab=new B()不能使用B类特有方法的区别
+
+
+
+static变量只能是类变量，不能放在方法里面
+static修饰的类变量是属于类的，可以直接获得，没有static修饰的类变量得通过对象获得
+static修饰的方法是属于类的，不属于对象
+public class AccessProperty {
+	static int i = 6; // 定义静态类成员变量
+类变量使用static修饰，该变量无论对象实例多少次，都是指向同一个内存，所以修改它，全局的i都会变化
+而且i变量值不随函数执行结束而消失，下次调用同一函数时，上次所赋予的值仍存在
+
+静态方法只能继承,不能重写,所以子类不能覆盖父类的static方法
+静态方法中不能用this和super关键字,static修饰的方法只能访问所属类的静态成员变量和静态成员方法
+
+
+当一个类被final所修饰时，表示该类是一个终态类，即不能被继承
+当一个方法被final所修饰的时，表示该方法是一个终态方法，即不能被重写
+当一个属性被final所修饰时，表示该属性不能被改写
+当final修饰一个原生数据类型时，表示该原生数据类型的值不能发生变化 final int a=1;
+如果final修饰一个引用类型时，表示该引用类型不能再指向其他对象
+
+final修饰的属性final int a；第一次赋值后，便不能再赋值了
+final只能使用类的构造方法赋值或者private String helpName="123";private final String name=helpName;  set方法无法使用
+
+
+
+每个整数占4个字节
+
+方法不能和类同名
+
+字符串有值类型和引用类型
+
+链表不能直接打印，需要借助ArrayList
+
+没有返回值使用void
+
+一个类的构造方法可以让该类自动new对象，可参考G
+
+Scanner sc=new Scanner(System.in);
+int num=sc.nextInt();
+int[] arr=new int[num];
+
+Integer.parseInt(): 把()里的内容转换为整数
+
+字符串123456789 
+(137)子序列是非连续的，(123)子串是连续的
+"回文串”是一个正读和反读都一样的字符串
+java的  121/10=12  9%10=9
+个位数都是回文数
+char类型不能使用eqlals,   char[] temp=str.toCharArray()  temp==''
+
+while(arr[l]==arr[++l])     直到某一个数组值不等于第一个数组值才退出循环
+for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(haystack.charAt(i+j)!=needle.charAt(j))  可以使第一个for循环i不变的情况下，使i在第二个循环不断增加和j比较
+
+使用for循环对数组的每个值进行操作，i从1开始   
+int[] arr={1,2,3}; 
+for(int i:arr){
+      arr[i-1]++;
+}
+
+1/2=0
+0%2=0
+9%10=9
+public int[] Main(） {      //返回类型是一个int[]
+        return new int[]{1,2};
+    }
+
+
+向右移一位    n>>>=1    也等于n>>1
+右移运算：n>>2 等于n/4     n>>2  n/(2的2次方)
+递归最后return的是第一层
+float a=25/2;double b=25/2;    a=12.0   b=12.0
+
+
+break结束循环，continue继续循环
+类可以小写
+int c=a---b     是a--,不是--b
+
+
+转换成小写 toLowerCase方法会重新new一个对象
+
+n += 1;不会改变变量本身的数据类型
+而n = n + 1;会改变变量本身的数据类型
+
+取模差不多等于取余
+.class文件是字节码文件
+类方法可以和类同名
+static add(int a,int b){}    其中a、b是形式参数
+在主方法main中使用int a=1,b =1;add(a,b)    其中a、b是实际参数
+其中a、b是形式参数
+把表示范围大的数转换为表示范围小的数，需要强制类型转换
+
+
+==和equals
+基本数据类型：变量的引用和数据存放在栈里；引用数据类型：对象的引用存放在栈里，实际数据(地址)存放在堆里
+把表示范围大的数转换为表示范围小的数，需要强制类型转换
+标识符不能数字开头  $Usdollars可以
+基本数据类型==原生类==内置类型
+值传递call by vallue    引用传递call by reference
+非静态的类方法属于对象的成员,不是类的成员；而静态方法属于类的成员
+
+由于一个员工最多有一个直系领导，可以有零个或若干个直系下属，因此员工之间的领导和下属关系构成树的结构
+先++是先+后执行这行语句；后++是先执行完这行语句再+
+
+答案需要取模 1e9+7(1000000007),则把结果sum=(a+b)%1000000007;
+
+得到多位数的每个数：int temp=num%10   num/=10
+
+−2^31    Integer.MIN_VALUE     2^31-1   Integer.MAX_VALUE
+
+Queue<TreeNode> queue=new LinkedList<TreeNode>(){{add(root);}};
+相当于   Queue<TreeNode> queue=new LinkedList<TreeNode>(); queue.add(root);
+
+任何数和0做异或运算，结果仍然是原来的数
+任何数和其自身做异或运算，结果是0
+异或运算满足交换律和结合律，即a⊕b⊕a=b⊕a⊕a=b⊕(a⊕a)=b⊕0=b
+XOR 异或运算，1和1等于0，1和0等于1，其中0和任何x XOR都等于x       java符号为^      其运算法则是对运算符两侧数的每一个进制位同值则取0，异值则取1
+
+冯诺依曼体系结构：CPU处理器、运算器、存储器（ RAM， ROM等 ）输入设备、输出设备五部分组成
+
+构造方法没有返回值类型，也不能定义为void
+
+
+
+
+
+输出ASCII码  System.out.println((int)'c');  ==  System.out.println('c'-0);
+char c='3' c-'0'表示整数3，原理是3的ASCII减去0的ASCII等于c的整数形式
+int a='c'-'0';   表示'c'的ASCII码减去'0'的ASCII码
+
+
+
+public MyArraylist() {
+        this(defalut_capacity);//this的作用无参构造方法调用有参构造方法
+}
+public MyArraylist(int capacity) {
+        elements = new int[capacity];
+}
+
+
+线程：
+继承Thread类并调用start()
+实现Runnable接口，创建类对象，把该类对象作为参数来创建Thread对象，调用start()
+创建一个实现Callable接口的类，把该类对象作为参数创建FutureTask对象，将FutureTask对象作为参数创建Thread对象，调用start()
+
+多态就是继承同一个抽象类，使用不同的实例而执行不同操作
+例如我们声明一个喝酒的抽象类，它有一个方法是喝酒，两个子类各有一个方法是喝茅台、喝葡萄酒，
+此时我们实例喝茅台的子类就会执行喝茅台，实例喝葡萄酒的子类就会执行喝葡萄酒
+
+悲观锁使用数据库本身的锁机制，会锁记录
+乐观锁是一种不锁记录的实现方式，使用CAS模式，对数据进行更新时，会version+1,并保存该值，在提交更新操作时，如果该值被改变了，则更新失败
+
+Mysql性能优化
+添加索引，查询1000w条数据，使用普通查询要一条一条插，使用索引就像书有目录一样，可以直接到达索引的位置，大大提高了查询效率
+索引的数据结构有:hash(键值对)、BTree(二叉树)、RTree、FullText(全文索引)
+为临时表添加足够多的内存
+
+1^2^3    相当于     2^1^3    顺序无影响
+
+\\w+      匹配任何有空格或标点符号隔开的字符串
+\\w+\\.   匹配任何以.接尾的字符串
+“\\.”和“.”同意，全句即根据'.'拆分字符串
+
+.代表当前目录下
+
+Random rand = new Random()；int t=rand.nextInt(10);产生1~10的一个随机数
+
+sout(this) 默认会打印对象本身的地址，而如果对象的方法有重写toString(),则打印的是toString()的内容
+
+没有public的构造函数默认是protect,只对本包开放
+
+java环境变量:
+JAVA_HOME配置jdk的安装路径
+path配置%JAVA_HOME%\bin和%JAVA_HOME%\jre\bin,使path可以通过JAVA_HOME的路径找到对应的\bin和\jre\bin
+classpath指定jdk的lib目录下的dt.jar和tools.jar
+
+1=00000001
+2=00000010
+3=00000011
+
+十进制的大小为10^9,因为10^9<2^30,所以十进制10^9的二进制位数为29    可以类比10^1<2^4,10==1010
+
+排好序的字符串数组是根据字典序排序
+
+if (!(o instanceof List)){//instanceof判断o是否为List的实例
+  return false;}
+  
+public class Test{
+    public static void main(String[] args) {
+    }
+    public int a(){
+        return -1;
+    }
+    public void b(){
+        a();//方法可以调用方法
+        System.out.println();
+    }
+}
+
+ public static void main(String[] args) {
+        int a=1;
+        changeInt(a);                       //不是全局变量，不能通过方法改变基本数据类型的值
+        System.out.println(a);              //因为传值的过程是把实参的值复制给形参，实参和形参不共享同一份内存
+
+
+        int[] arr={1,2};
+        changeObject(arr);                  //可以通过方法改变Object对象的值
+        for(int aaaa:arr){
+            System.out.println(aaaa);
+        }
+    }
+    public static void changeInt(int a){
+        a=2;
+    }
+    public static void changeObject(int[] arr){
+        arr[0]=666;
+    }
+	
+组合数没有顺序之分，排列数有顺序之分
+
+1+""把1变为字符串
+
+Integer.MAX_VALUE是int类型
+
