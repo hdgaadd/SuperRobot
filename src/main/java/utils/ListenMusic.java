@@ -19,7 +19,7 @@ public class ListenMusic {
         try {
             new Player(new BufferedInputStream
                     (new FileInputStream(
-                            new File(courseFile+"\\MyItem\\SuperRobot\\src\\main\\java\\res\\music\\有何不可.mp3"))))
+                            new File(courseFile+"\\src\\main\\java\\res\\music\\有何不可.mp3"))))
                     .play();
         } catch (Exception e) {
             e.printStackTrace();

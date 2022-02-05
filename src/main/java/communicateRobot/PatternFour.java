@@ -19,10 +19,13 @@ public class PatternFour {
         //获取歌曲播放对象
         try {
             //声明一个File对象
-            File file = new File("E:\\offer\\MyItem\\SuperRobot\\src\\main\\java\\res\\music\\");
+            File directory = new File("");// 参数为空
+            String courseFile = directory.getCanonicalPath();
+            File file = new File(courseFile+"\\src\\main\\java\\res\\music\\");
             File[] files = file.listFiles();
             Random random = new Random();
-            int index=random.nextInt(files.length - 1);
+            int index=random.nextInt(files.length);
+            System.out.println("music" + index);
             File mp3 = files[index];
             //创建一个输入流
             FileInputStream fileInputStream = new FileInputStream(mp3);
