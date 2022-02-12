@@ -2,15 +2,21 @@ package communicateRobot;
 
 import utils.ExcelData;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Random;
 import java.util.Scanner;
 /**
  * @authod Mr Chen
  */
 public class PatternTwo {
-    public void reviewWord(){
+    public void reviewWord() throws IOException {
         System.out.println("请输入您要复习的单词个数");
-        ExcelData sheet1 = new ExcelData("E:\\offer\\MyItem\\SuperRobot\\src\\main\\java\\res\\englishWord.xlsx", "Sheet1");
+
+        File directory = new File("");// 参数为空
+        String courseFile = directory.getCanonicalPath();
+
+        ExcelData sheet1 = new ExcelData(courseFile + "\\src\\main\\java\\res\\englishWord.xlsx", "Sheet1");
         Scanner sc=new Scanner(System.in);
         int count=sc.nextInt();
         Random random=new Random();

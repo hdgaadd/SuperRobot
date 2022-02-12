@@ -12,8 +12,10 @@ public class Music {
     public Player player = null;
     public void music(){
         try {
-            //声明一个File对象
-            File mp3 = new File("E:\\offer\\MyItem\\SuperRobot\\src\\main\\java\\res\\niuMusic.mp3");
+            File directory = new File("");// 参数为空
+            String courseFile = directory.getCanonicalPath();
+            File mp3 = new File(courseFile+"\\src\\main\\java\\res\\niuMusic.mp3");
+
             //创建一个输入流
             FileInputStream fileInputStream = new FileInputStream(mp3);
             //创建一个缓冲流

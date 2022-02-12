@@ -22,6 +22,7 @@ public class PatternFour {
             File directory = new File("");// 参数为空
             String courseFile = directory.getCanonicalPath();
             File file = new File(courseFile+"\\src\\main\\java\\res\\music\\");
+
             File[] files = file.listFiles();
             Random random = new Random();
             int index=random.nextInt(files.length);

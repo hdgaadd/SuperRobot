@@ -34,7 +34,12 @@ public class PatternThree {
     public void createTxt() throws IOException {
         StringBuilder sb = new StringBuilder();
         String temp = null;
-        BufferedReader reader = new BufferedReader(new FileReader(new File("E:\\offer\\MyItem\\SuperRobot\\src\\main\\java\\res\\offer.txt")));
+
+        File directory = new File("");// 参数为空
+        String courseFile = directory.getCanonicalPath();
+        File file = new File(courseFile+"\\src\\main\\java\\res\\offer.txt");
+
+        BufferedReader reader = new BufferedReader(new FileReader(file));
         int ch = 0;
         char ans='1';//保存前一个字符，用来判断什么时候笔记某一段结束了
         while ((ch = reader.read()) != -1) {
